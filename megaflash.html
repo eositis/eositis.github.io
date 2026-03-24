@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MegaFlash — internal storage for Apple IIc and IIc Plus: ProDOS volumes, RAM disk, Wi‑Fi TFTP, NTP, and more."
+    />
+    <title>MegaFlash — Ositis Electronics</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo-lockup" href="index.html">
+          <img
+            class="logo-lockup__mark"
+            src="images/ositis-logo.png"
+            alt=""
+            width="1024"
+            height="1024"
+            decoding="async"
+          />
+          <span class="logo-lockup__text">Ositis Electronics</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="megaflash.html" class="is-active">MegaFlash</a>
+          <a href="perf-tools.html">Perf tools</a>
+          <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie store</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <p class="breadcrumb">
+        <a href="index.html">Ositis Electronics</a> / MegaFlash
+      </p>
+
+      <section class="hero">
+        <div>
+          <span class="hero__eyebrow">Apple IIc · IIc Plus</span>
+          <h1>Internal storage that feels like it was always there</h1>
+          <p class="hero__lead">
+            MegaFlash is an internal storage device for Apple IIc and IIc Plus computers—multiple ProDOS volumes,
+            a fast RAM disk, Wi‑Fi transfers, network time sync, and a full control panel—built around a Raspberry
+            Pi Pico 2 W.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="https://github.com/eositis/MegaFlash/releases" target="_blank" rel="noopener noreferrer">Get releases</a>
+            <a class="btn btn--ghost" href="support.html">Support &amp; help</a>
+            <a class="btn btn--buy" href="https://jcm-1.com" target="_blank" rel="noopener noreferrer">Buy it now</a>
+          </div>
+        </div>
+        <figure class="hero__media">
+          <img
+            src="https://raw.githubusercontent.com/eositis/MegaFlash/main/images/megaflash_rev1_s.jpg"
+            alt="MegaFlash PCB installed in an Apple IIc family machine"
+            width="640"
+            height="480"
+            loading="eager"
+          />
+        </figure>
+      </section>
+
+      <section class="section" id="features">
+        <h2>What you get</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>ProDOS volumes</h3>
+            <p>128MB capacity split across four ProDOS drives—room for software, data, and backups.</p>
+          </article>
+          <article class="card">
+            <h3>RAM &amp; ROM disks</h3>
+            <p>400kB RAM disk for speed, plus a ROM disk for disaster recovery when you need a known-good boot path.</p>
+          </article>
+          <article class="card">
+            <h3>Slinky &amp; boot menu</h3>
+            <p>256kB Slinky emulation on stock firmware, with a boot menu in the spirit of ROM4X/5X.</p>
+          </article>
+          <article class="card">
+            <h3>Control panel</h3>
+            <p>Configure and manage the device from a dedicated control panel stored in Pico flash—no cramming everything into Apple ROM.</p>
+          </article>
+          <article class="card">
+            <h3>Time &amp; networking</h3>
+            <p>Real-time clock with a ProDOS driver, NTP sync over Wi‑Fi, and TFTP for moving ProDOS images on the network.</p>
+          </article>
+          <article class="card">
+            <h3>Serial &amp; extras</h3>
+            <p>XModem over USB serial, an FPU for Applesoft BASIC, and fixes for System ROM and Applesoft quirks.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="requirements">
+        <h2>Requirements</h2>
+        <div class="two-col">
+          <div class="card">
+            <h3>Compatible systems</h3>
+            <p>Apple IIc, or Apple IIc Plus. The required system ROM replacement is provided to enable MegaFlash functionality.</p>
+          </div>
+          <div class="card">
+            <h3>Hardware snapshot</h3>
+            <p>Raspberry Pi Pico 2 W, Winbond 25Q01 NOR flash, GAL16V8 for decode, and 5V–3.3V level shifting. Schematics are in the repository.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="docs">
+        <h2>Documentation</h2>
+        <p style="margin: 0 0 1rem; color: var(--muted); max-width: 52ch">
+          The project README, Pico firmware notes, and API docs live on GitHub. There is also a
+          <a href="https://github.com/eositis/MegaFlash/raw/main/userguide.pdf">user guide (PDF)</a>
+          for deeper setup and usage detail.
+        </p>
+        <a class="btn btn--ghost" href="https://github.com/eositis/MegaFlash" target="_blank" rel="noopener noreferrer">Open the repository</a>
+      </section>
+    </main>
+
+    <aside class="sponsor" aria-label="Sponsor">
+      <div class="sponsor__inner">
+        <p class="sponsor__text">
+          This product has been partially sponsored by
+          <a
+            class="sponsor__link"
+            href="https://www.pcbway.com/orderonline.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="sponsor__logo"
+              src="https://media.printables.com/media/prints/1452276/rich_content/1f8375fa-0508-4561-96c7-5ef4a00f3bad/image.webp"
+              alt="PCBWay"
+              width="800"
+              height="224"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>.
+        </p>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Ositis Electronics</a>
+        · MegaFlash · Open source on
+        <a href="https://github.com/eositis/MegaFlash" target="_blank" rel="noopener noreferrer">GitHub</a>
+        · <a href="perf-tools.html">Perf tools</a>
+        · <a href="support.html">Support</a>
+        · <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie</a>
+      </p>
+    </footer>
+  </body>
+</html>

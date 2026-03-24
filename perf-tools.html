@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Free Apple II performance tools from Ositis: a2speed benchmarks and SPF (Stress ProDOS Filesystem) for MegaFlash tuning."
+    />
+    <title>Performance testing tools — Ositis Electronics</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo-lockup" href="index.html">
+          <img
+            class="logo-lockup__mark"
+            src="images/ositis-logo.png"
+            alt=""
+            width="1024"
+            height="1024"
+            decoding="async"
+          />
+          <span class="logo-lockup__text">Ositis Electronics</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="megaflash.html">MegaFlash</a>
+          <a href="perf-tools.html" class="is-active">Perf tools</a>
+          <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie store</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <p class="breadcrumb">
+        <a href="index.html">Ositis Electronics</a> / Performance tools
+      </p>
+
+      <h1>Performance testing tools</h1>
+
+      <section class="section section--flush-top" id="why">
+        <div class="about-card perf-tools-why">
+          <h2 class="perf-tools-why__title">Why these exist</h2>
+          <p>
+            MegaFlash firmware and hardware evolve faster when changes can be checked against repeatable measurements.
+            These tools were written to support that workflow: <strong>a2speed</strong> gives a structured way to
+            benchmark CPU and Applesoft behavior across machines and configurations, and <strong>SPF</strong> hammers
+            ProDOS storage and timed I/O so you can see filesystem-level effects. Both rely on a real-time clock with
+            second resolution (including MegaFlash’s clock) so “before” and “after” runs are comparable—not guesswork.
+          </p>
+          <p class="about-card__muted">
+            They are free, open source, and usable beyond MegaFlash; MegaFlash is simply where the need showed up first.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="downloads">
+        <h2>Downloads</h2>
+        <div class="support-links">
+          <a class="support-card" href="https://github.com/eositis/a2speed" target="_blank" rel="noopener noreferrer">
+            <h2>a2speed</h2>
+            <p>
+              <strong>New</strong> Apple II performance benchmark. Use it to profile how your system, accelerator, or
+              emulator behaves. Includes <code>a2speed.po</code> and Applesoft sources in the repo. Work in
+              progress—currently exercises Applesoft math and computation; more tests (storage, video, and others) are
+              planned. Recognizes clocks including IIgs, No-slot-clock, TimeMaster, and MegaFlash.
+            </p>
+            <span class="arrow">github.com/eositis/a2speed →</span>
+          </a>
+          <a class="support-card" href="https://github.com/eositis/spf" target="_blank" rel="noopener noreferrer">
+            <h2>SPF — Stress ProDOS Filesystem</h2>
+            <p>
+              <strong>Updated</strong> fork of the ADTPro SPF lineage. Stress-tests ProDOS by writing, reading, and
+              verifying every byte of a volume, and by benchmarking file and block I/O. Includes MegaFlash in the clock
+              compatibility layer (alongside IIgs, NoSlotClock, Thunderclock, ROMX, and others) for second-resolution
+              timing during runs.
+            </p>
+            <span class="arrow">github.com/eositis/spf →</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Ositis Electronics</a>
+        · <a href="megaflash.html">MegaFlash</a>
+        · <a href="support.html">Support</a>
+        · <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie</a>
+      </p>
+    </footer>
+  </body>
+</html>
