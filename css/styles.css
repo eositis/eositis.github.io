@@ -714,3 +714,59 @@ main > h1 {
   color: var(--text);
   font-weight: 600;
 }
+
+/* Coming soon page */
+.coming-soon-page {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.coming-soon-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../images/ositis-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(72vmin, 440px);
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.coming-soon {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 680px);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(20, 26, 32, 0.88);
+  text-align: center;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+.coming-soon__eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.coming-soon h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.coming-soon__copy {
+  margin: 0 auto 1.5rem;
+  color: var(--muted);
+  max-width: 42ch;
+}
