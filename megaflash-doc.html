@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Read MegaFlash technical documentation on the Ositis Electronics site." />
+    <title>Document — MegaFlash docs · Ositis Electronics</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="megaflash-doc">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo-lockup" href="index.html">
+          <img
+            class="logo-lockup__mark"
+            src="images/ositis-logo.png"
+            alt=""
+            width="1024"
+            height="1024"
+            decoding="async"
+          />
+          <span class="logo-lockup__text">Ositis Electronics</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="megaflash.html" class="is-active">MegaFlash</a>
+          <a href="perf-tools.html">Perf tools</a>
+          <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie store</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc-page">
+      <p class="breadcrumb">
+        <a href="index.html">Ositis Electronics</a> / <a href="megaflash.html">MegaFlash</a> /
+        <a href="megaflash-docs.html">Documentation</a> / <span id="doc-breadcrumb-current">Reading</span>
+      </p>
+
+      <div class="doc-page__toolbar">
+        <a class="doc-page__back" href="megaflash-docs.html">← All documents</a>
+        <a
+          class="doc-page__source"
+          id="doc-source-link"
+          href="https://github.com/eositis/MegaFlash/tree/main/docs"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        >
+          View source .md on GitHub
+        </a>
+      </div>
+
+      <h1 class="doc-page__title" id="doc-page-title">Loading…</h1>
+
+      <p class="doc-error" id="doc-error" role="alert" hidden></p>
+
+      <article class="doc-prose" id="doc-body" aria-busy="true"></article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Ositis Electronics</a>
+        · <a href="megaflash.html">MegaFlash</a>
+        · <a href="megaflash-docs.html">Documentation</a>
+        · <a href="support.html">Support</a>
+        · <a href="https://github.com/eositis/MegaFlash" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js" crossorigin="anonymous"></script>
+    <script src="js/megaflash-docs.js" defer></script>
+    <script defer src="js/hit-tracker.js" data-endpoint="http://localhost:8787"></script>
+  </body>
+</html>

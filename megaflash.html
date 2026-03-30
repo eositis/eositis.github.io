@@ -13,17 +13,28 @@
   <body>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="logo-lockup" href="index.html">
-          <img
-            class="logo-lockup__mark"
-            src="images/ositis-logo.png"
-            alt=""
-            width="1024"
-            height="1024"
-            decoding="async"
-          />
-          <span class="logo-lockup__text">Ositis Electronics</span>
-        </a>
+        <div class="site-header__brand">
+          <a class="logo-lockup" href="index.html">
+            <img
+              class="logo-lockup__mark"
+              src="images/ositis-logo.png"
+              alt=""
+              width="1024"
+              height="1024"
+              decoding="async"
+            />
+            <span class="logo-lockup__text">Ositis Electronics</span>
+          </a>
+          <a class="site-header__megaflash-mark" href="megaflash.html" aria-label="MegaFlash">
+            <img
+              src="images/MegaFlash%20Logo%20color%20alpha.png"
+              alt=""
+              width="400"
+              height="120"
+              decoding="async"
+            />
+          </a>
+        </div>
         <nav class="nav" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="megaflash.html" class="is-active">MegaFlash</a>
@@ -34,12 +45,11 @@
     </header>
 
     <main>
-      <p class="breadcrumb">
-        <a href="index.html">Ositis Electronics</a> / MegaFlash
-      </p>
-
-      <section class="hero">
-        <div>
+      <section class="hero hero--megaflash">
+        <p class="breadcrumb hero__breadcrumb">
+          <a href="index.html">Ositis Electronics</a> / MegaFlash
+        </p>
+        <div class="hero__copy">
           <span class="hero__eyebrow">Apple IIc · IIc Plus</span>
           <h1>Internal storage that feels like it was always there</h1>
           <p class="hero__lead">
@@ -54,15 +64,17 @@
             <a class="btn btn--buy" href="coming-soon.html">Buy it now</a>
           </div>
         </div>
-        <figure class="hero__media">
-          <img
-            src="https://raw.githubusercontent.com/eositis/MegaFlash/main/images/megaflash_rev1_s.jpg"
-            alt="MegaFlash PCB installed in an Apple IIc family machine"
-            width="640"
-            height="480"
-            loading="eager"
-          />
-        </figure>
+        <div
+          class="hero__gallery"
+          data-hero-gallery
+          data-gallery-manifest="gallery/megaflash/manifest.json"
+          data-interval="5500"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="MegaFlash product photos and screenshots"
+        >
+          <div class="hero__gallery-window"></div>
+        </div>
       </section>
 
       <section class="section" id="features">
@@ -154,6 +166,22 @@
         · <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie</a>
       </p>
     </footer>
+    <script type="application/json" id="megaflash-gallery-manifest">
+{
+  "version": 1,
+  "items": [
+    {
+      "file": "MegaFlash-New.jpg",
+      "alt": "MegaFlash product photo"
+    },
+    {
+      "file": "MegaFlash logo color cropped.png",
+      "alt": "MegaFlash logo on hardware"
+    }
+  ]
+}
+    </script>
+    <script src="js/megaflash-hero-gallery.js" defer></script>
     <script defer src="js/hit-tracker.js" data-endpoint="http://localhost:8787"></script>
   </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MegaFlash technical documentation: API notes, firmware, networking, and integration guides."
+    />
+    <title>Documentation — MegaFlash · Ositis Electronics</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="megaflash-docs-index">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo-lockup" href="index.html">
+          <img
+            class="logo-lockup__mark"
+            src="images/ositis-logo.png"
+            alt=""
+            width="1024"
+            height="1024"
+            decoding="async"
+          />
+          <span class="logo-lockup__text">Ositis Electronics</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="megaflash.html" class="is-active">MegaFlash</a>
+          <a href="perf-tools.html">Perf tools</a>
+          <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie store</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <p class="breadcrumb">
+        <a href="index.html">Ositis Electronics</a> / <a href="megaflash.html">MegaFlash</a> / Documentation
+      </p>
+      <h1>Technical documentation</h1>
+      <p class="support-intro doc-hub__intro">
+        The index is built from <code>docs/web-docs-index.json</code> in the MegaFlash repo (fetched from
+        <code>raw.githubusercontent.com</code>, same as the Markdown files). Titles and summaries are read from each
+        <code>.md</code> file. If the index file is missing, the site falls back to a bundled copy. Add or remove filenames in
+        <code>web-docs-index.json</code> when new docs are added to the repository. Use “View source .md on GitHub” on any
+        article to edit the file on GitHub.
+      </p>
+
+      <div class="doc-grid" id="doc-list">
+        <p class="doc-loading" id="doc-loading">Loading documents…</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Ositis Electronics</a>
+        · <a href="megaflash.html">MegaFlash</a>
+        · <a href="support.html">Support</a>
+        · <a href="perf-tools.html">Perf tools</a>
+        · <a href="https://github.com/eositis/MegaFlash" target="_blank" rel="noopener noreferrer">GitHub</a>
+        · <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie</a>
+      </p>
+    </footer>
+    <script src="js/megaflash-docs.js" defer></script>
+    <script defer src="js/hit-tracker.js" data-endpoint="http://localhost:8787"></script>
+  </body>
+</html>

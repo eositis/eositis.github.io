@@ -1,0 +1,17 @@
+{
+  "files": [
+    "C0x-register-comparison-Uthernet2-MegaFlash.md",
+    "Debug-mode.md",
+    "FujiNet-network-stack-on-MegaFlash.md",
+    "Implementation-notes-and-reasoning.md",
+    "MegaFlash-AppleII-API.md",
+    "MegaFlash-firmware-summary.md",
+    "ROM-patches-description.md",
+    "Slot1-redirect-to-C0C8-C0CB.md",
+    "Slot1-serial-port-in-iic-bin.md",
+    "Uthernet-II-emulation-on-MegaFlash.md",
+    "a2osx-megaflash-lib.md",
+    "cc65-megaflash-lib.md",
+    "ip65-Uthernet-II-integration.md"
+  ]
+}
