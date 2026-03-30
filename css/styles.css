@@ -848,23 +848,26 @@ a.card.product-card h3 {
   background: var(--accent-dim);
 }
 
-.doc-card__heading {
+/* Link wraps only the heading; summary is a sibling so it never inherits link color/underline. */
+a.doc-card__title {
+  display: block;
   margin: 0 0 0.5rem;
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-}
-
-.doc-card__title {
   color: var(--link);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   font-weight: 600;
 }
 
-.doc-card__title:hover {
+a.doc-card__title:hover {
   color: #bae6fd;
+}
+
+.doc-card__heading {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 .doc-card__summary {
@@ -872,6 +875,7 @@ a.card.product-card h3 {
   font-size: 0.9375rem;
   color: var(--muted);
   line-height: 1.55;
+  text-decoration: none;
 }
 
 .doc-error {

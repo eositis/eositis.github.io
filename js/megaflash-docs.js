@@ -183,17 +183,17 @@
         items.forEach(function (d) {
           var card = document.createElement("article");
           card.className = "doc-card";
-          var h2 = document.createElement("h2");
-          h2.className = "doc-card__heading";
           var titleLink = document.createElement("a");
           titleLink.className = "doc-card__title";
           titleLink.href = "megaflash-doc.html?doc=" + encodeURIComponent(d.id);
-          titleLink.textContent = d.title || d.id;
-          h2.appendChild(titleLink);
+          var h2 = document.createElement("h2");
+          h2.className = "doc-card__heading";
+          h2.textContent = d.title || d.id;
+          titleLink.appendChild(h2);
           var p = document.createElement("p");
           p.className = "doc-card__summary";
           p.textContent = d.summary || "";
-          card.appendChild(h2);
+          card.appendChild(titleLink);
           card.appendChild(p);
           list.appendChild(card);
         });
