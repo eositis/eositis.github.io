@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="a2-6502 Logic Analyzer Adapter support: setup notes, profile import paths, software links, and troubleshooting resources."
+    />
+    <title>Support — a2-6502 Logic Analyzer Adapter · Ositis Electronics</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo-lockup" href="index.html">
+          <img
+            class="logo-lockup__mark"
+            src="images/ositis-logo.png"
+            alt=""
+            width="1024"
+            height="1024"
+            decoding="async"
+          />
+          <span class="logo-lockup__text">Ositis Electronics</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="megaflash.html">MegaFlash</a>
+          <a href="perf-tools.html">Perf tools</a>
+          <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie store</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <p class="breadcrumb">
+        <a href="index.html">Ositis Electronics</a> /
+        <a href="a2-6502-analyzer.html">a2-6502 Logic Analyzer Adapter</a> / Support
+      </p>
+      <h1>Support</h1>
+      <p class="support-intro">
+        Setup and support resources for the a2-6502 adapter. This page is based on the project README and points to the
+        official repositories, software, profile files, and schematics.
+      </p>
+
+      <div class="support-links">
+        <a
+          class="support-card"
+          href="https://github.com/eositis/a2-6502-analyzer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>Official repository</h2>
+          <p>Hardware source, README, setup details, profile files, and project history for the adapter.</p>
+          <span class="arrow">github.com/eositis/a2-6502-analyzer →</span>
+        </a>
+        <a
+          class="support-card"
+          href="https://github.com/gusmanb/logicanalyzer/discussions/277"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>LogicAnalyzer 6.5 beta</h2>
+          <p>Recommended software line for this adapter because it supports profile import and mapping workflow.</p>
+          <span class="arrow">6.5 beta discussion and release info →</span>
+        </a>
+        <a
+          class="support-card"
+          href="https://github.com/eositis/a2-6502-analyzer/tree/main/Gusmans-LogicAnalyzer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>Adapter profile files</h2>
+          <p>Import-ready profile set for channel assignments when using the a2-6502 deployment.</p>
+          <span class="arrow">Gusmans-LogicAnalyzer profile folder →</span>
+        </a>
+        <a
+          class="support-card"
+          href="https://github.com/eositis/a2-6502-analyzer/blob/main/kicad/v1.5/6502-interposer-schematic-1_5.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>Production schematic (v1.5)</h2>
+          <p>Board-level schematic PDF for electrical reference and debugging.</p>
+          <span class="arrow">Open schematic PDF →</span>
+        </a>
+      </div>
+
+      <section class="support-secondary" aria-labelledby="setup-overview">
+        <h2 id="setup-overview">Initial setup overview</h2>
+        <ul>
+          <li>Install firmware on both LogicAnalyzer boards, then mount both analyzers onto the adapter.</li>
+          <li>Link the two analyzer boards with three DuPont jumpers (top-to-top, middle-to-middle, bottom-to-bottom).</li>
+          <li>Move the system CPU to the adapter socket (or use a spare CPU), keeping notch orientation correct.</li>
+          <li>Insert the adapter into the host CPU socket and ensure full seating.</li>
+          <li>Start LogicAnalyzer software, create a MultiDevice pair, set master/slave, then run a validation capture.</li>
+          <li>If channel behavior looks wrong after pairing, recreate the device and swap which board is master.</li>
+        </ul>
+      </section>
+
+      <section class="support-secondary" aria-labelledby="profile-paths">
+        <h2 id="profile-paths">Profile import paths</h2>
+        <ul>
+          <li>macOS / Linux: copy <code>profiles.json</code> to <code>$HOME/Library/Application Support/LogicAnalyzer</code>.</li>
+          <li>Windows: copy <code>profiles.json</code> to <code>%userprofile%/appdata/roaming/logicanalyzer</code>.</li>
+          <li>If you already use a custom profile file, merge the adapter profile entries into your existing file.</li>
+        </ul>
+      </section>
+
+      <section class="support-secondary" aria-labelledby="install-profile-detailed">
+        <h2 id="install-profile-detailed">Install the pre-built LogicAnalyzer profile (required)</h2>
+        <p class="tool-detail" style="margin: 0 0 1rem">
+          This is a critical setup step. Without the pre-built profile, channel names and assignments will not match the
+          adapter wiring and captures will be confusing to interpret.
+        </p>
+        <ol>
+          <li>
+            Download the pre-built profile from
+            <a href="https://github.com/eositis/a2-6502-analyzer/tree/main/Gusmans-LogicAnalyzer" target="_blank" rel="noopener noreferrer"
+              >the adapter profile folder</a
+            >.
+            The file to install is <code>profiles.json</code>.
+          </li>
+          <li>
+            Close the LogicAnalyzer application completely before copying files so it does not overwrite profile changes on exit.
+          </li>
+          <li>
+            Locate your LogicAnalyzer profile directory:
+            <ul>
+              <li>macOS / Linux: <code>$HOME/Library/Application Support/LogicAnalyzer</code></li>
+              <li>Windows: <code>%userprofile%/appdata/roaming/logicanalyzer</code></li>
+            </ul>
+          </li>
+          <li>
+            Backup your existing profile file first (recommended):
+            <ul>
+              <li>Rename the current file to <code>profiles.backup.json</code>, or copy it to a safe location.</li>
+            </ul>
+          </li>
+          <li>
+            Install the pre-built profile:
+            <ul>
+              <li>
+                If you do not already use custom profiles, copy the downloaded <code>profiles.json</code> directly into the profile directory.
+              </li>
+              <li>
+                If you already have a populated <code>profiles.json</code>, merge the a2-6502 profile entries into your existing file instead
+                of replacing it.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Start LogicAnalyzer and open your multi-device setup (one analyzer as master, second as slave).
+          </li>
+          <li>
+            Open the profiles menu and select the Apple II / a2-6502 profile you installed.
+          </li>
+          <li>
+            Run a quick capture and verify channel labeling:
+            <ul>
+              <li>CPU channels (clock, control, address, data) appear with expected names.</li>
+              <li>J3 channels map to CH-33 through CH-48 as listed in the tables on this page.</li>
+            </ul>
+          </li>
+          <li>
+            If labels are missing or incorrect:
+            <ul>
+              <li>Confirm the file is in the correct OS path.</li>
+              <li>Confirm JSON formatting is valid (especially after manual merge).</li>
+              <li>Restart LogicAnalyzer after any profile file edits.</li>
+              <li>Recreate the multi-device pair and re-apply the profile.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section class="support-secondary" aria-labelledby="usb-notes">
+        <h2 id="usb-notes">USB mode notes</h2>
+        <ul>
+          <li>Use two USB cables, one per analyzer board.</li>
+          <li>Set the adapter jumper/switch to USB mode for normal tethered use.</li>
+          <li>Reference voltage is typically <code>EXT</code> (Apple II 5V rail reference).</li>
+          <li>Wi-Fi mode should only be used when the analyzers are configured for full wireless operation.</li>
+        </ul>
+      </section>
+
+      <section class="support-secondary" aria-labelledby="channel-maps">
+        <h2 id="channel-maps">Channel maps and signal assignments</h2>
+        <p class="tool-detail" style="margin: 0 0 1rem">
+          The tables below are copied from the project README so signal lookups are available directly on this page.
+        </p>
+        <div class="doc-prose">
+          <h3>CPU + analyzer channel assignments</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>J1-Analyzer1</th>
+                <th>Signal</th>
+                <th>Pin</th>
+                <th>J2-Analyzer2</th>
+                <th>Signal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>CH-1</td><td>RDY</td><td>1</td><td>CH-25</td><td>A8</td></tr>
+              <tr><td>CH-2</td><td>IRQ\</td><td>2</td><td>CH-26</td><td>A9</td></tr>
+              <tr><td>CH-3</td><td>NMI\</td><td>3</td><td>CH-27</td><td>A10</td></tr>
+              <tr><td>CH-4</td><td>R/W\</td><td>4</td><td>CH-28</td><td>A11</td></tr>
+              <tr><td>CH-5</td><td>PHASE0</td><td>5</td><td>CH-29</td><td>A12</td></tr>
+              <tr><td>CH-6</td><td>RES\</td><td>6</td><td>CH-30</td><td>A13</td></tr>
+              <tr><td>CH-7</td><td>D0</td><td>7</td><td>CH-31</td><td>A14</td></tr>
+              <tr><td>CH-8</td><td>D1</td><td>8</td><td>CH-32</td><td>A15</td></tr>
+              <tr><td>CH-9</td><td>D2</td><td>9</td><td>CH-33</td><td>J3-1</td></tr>
+              <tr><td>CH-10</td><td>D3</td><td>10</td><td>CH-34</td><td>J3-2</td></tr>
+              <tr><td>CH-11</td><td>D4</td><td>11</td><td>CH-35</td><td>J3-3</td></tr>
+              <tr><td>CH-12</td><td>D5</td><td>12</td><td>CH-36</td><td>J3-4</td></tr>
+              <tr><td>CH-13</td><td>D6</td><td>21</td><td>CH-37</td><td>J3-5</td></tr>
+              <tr><td>CH-14</td><td>D7</td><td>22</td><td>CH-38</td><td>J3-6</td></tr>
+              <tr><td>CH-15</td><td>A1</td><td>23</td><td>CH-39</td><td>J3-7</td></tr>
+              <tr><td>CH-16</td><td>A2</td><td>24</td><td>CH-40</td><td>J3-8</td></tr>
+              <tr><td>CH-17</td><td>A3</td><td>25</td><td>CH-41</td><td>J3-9</td></tr>
+              <tr><td>CH-18</td><td>A4</td><td>26</td><td>CH-42</td><td>J3-10</td></tr>
+              <tr><td>CH-19</td><td>A5</td><td>27</td><td>CH-43</td><td>J3-11</td></tr>
+              <tr><td>CH-20</td><td>A6</td><td>28</td><td>CH-44</td><td>J3-12</td></tr>
+              <tr><td>CH-21</td><td>A7</td><td>29</td><td>CH-45</td><td>J3-13</td></tr>
+              <tr><td>CH-22</td><td>A8</td><td>30</td><td>CH-46</td><td>J3-14</td></tr>
+              <tr><td>CH-23</td><td>Phase1</td><td>32</td><td>CH-47</td><td>J3-15</td></tr>
+              <tr><td>CH-24</td><td>SYNC</td><td>32</td><td>CH-48</td><td>J3-16</td></tr>
+            </tbody>
+          </table>
+
+          <h3>J3 header pin assignments</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>PIN-1</th>
+                <th>PIN-3</th>
+                <th>PIN-5</th>
+                <th>PIN-7</th>
+                <th>PIN-9</th>
+                <th>PIN-11</th>
+                <th>PIN-13</th>
+                <th>PIN-15</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CH-33</td>
+                <td>CH-35</td>
+                <td>CH-37</td>
+                <td>CH-39</td>
+                <td>CH-41</td>
+                <td>CH-43</td>
+                <td>CH-45</td>
+                <td>CH-47</td>
+              </tr>
+              <tr>
+                <td>CH-34</td>
+                <td>CH-36</td>
+                <td>CH-38</td>
+                <td>CH-40</td>
+                <td>CH-42</td>
+                <td>CH-44</td>
+                <td>CH-46</td>
+                <td>CH-48</td>
+              </tr>
+              <tr>
+                <td>PIN-2</td>
+                <td>PIN-4</td>
+                <td>PIN-6</td>
+                <td>PIN-8</td>
+                <td>PIN-10</td>
+                <td>PIN-12</td>
+                <td>PIN-14</td>
+                <td>PIN-16</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li>
+            LogicAnalyzer operation guide:
+            <a href="https://github.com/gusmanb/logicanalyzer/wiki/06---The-LogicAnalyzer-program" target="_blank" rel="noopener noreferrer"
+              >LogicAnalyzer wiki</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Ositis Electronics</a>
+        · <a href="a2-6502-analyzer.html">a2-6502 Logic Analyzer Adapter</a>
+        · <a href="perf-tools.html">Perf tools</a>
+        · <a href="https://github.com/eositis/a2-6502-analyzer" target="_blank" rel="noopener noreferrer">GitHub</a>
+        · <a href="https://www.tindie.com/products/eositis/a2-6502-logicanalyzer-adapter/" target="_blank" rel="noopener noreferrer">Tindie</a>
+      </p>
+    </footer>
+    <script defer src="js/hit-tracker.js" data-endpoint="http://localhost:8787"></script>
+  </body>
+</html>

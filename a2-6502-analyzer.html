@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="a2-6502 Logic Analyzer Adapter — probe MOS 6502 bus activity on Apple II systems with an adapter designed for Dr Gusman's LogicAnalyzer platform."
+    />
+    <title>a2-6502 Logic Analyzer Adapter — Ositis Electronics</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo-lockup" href="index.html">
+          <img
+            class="logo-lockup__mark"
+            src="images/ositis-logo.png"
+            alt=""
+            width="1024"
+            height="1024"
+            decoding="async"
+          />
+          <span class="logo-lockup__text">Ositis Electronics</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="megaflash.html">MegaFlash</a>
+          <a href="perf-tools.html">Perf tools</a>
+          <a href="https://www.tindie.com/stores/eositis/" target="_blank" rel="noopener noreferrer">Tindie store</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--megaflash">
+        <div class="hero__copy">
+          <p class="breadcrumb"><a href="index.html">Ositis Electronics</a> / a2-6502 Logic Analyzer Adapter</p>
+          <span class="hero__eyebrow">Apple II bus diagnostics</span>
+          <h1>a2‑6502 Logic Analyzer Adapter</h1>
+          <p class="hero__lead">
+            Socket-level adapter for capturing MOS 6502 CPU signals on Apple II systems. It maps CPU pins to a pair of
+            LogicAnalyzer boards and exposes an additional 16-signal header for wider system correlation.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="https://www.tindie.com/products/eositis/a2-6502-logicanalyzer-adapter/" target="_blank" rel="noopener noreferrer">Buy on Tindie</a>
+            <a class="btn btn--ghost" href="https://github.com/eositis/a2-6502-analyzer" target="_blank" rel="noopener noreferrer">Official GitHub</a>
+            <a class="btn btn--ghost" href="a2-6502-support.html">Support &amp; setup</a>
+          </div>
+        </div>
+        <div
+          class="hero__gallery"
+          data-hero-gallery
+          data-gallery-manifest="gallery/megaflash/manifest.json"
+          data-interval="5500"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="a2-6502 product photos and diagrams"
+        >
+          <div class="hero__gallery-window"></div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <h2>What this adapter does</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>Full CPU bus visibility</h3>
+            <p>Routes MOS 6502 socket signals from the target Apple II system into the LogicAnalyzer capture setup.</p>
+          </article>
+          <article class="card">
+            <h3>Dual-analyzer mapping</h3>
+            <p>Pin/channel mapping is designed for two Dr Gusman LogicAnalyzer boards as used in this deployment.</p>
+          </article>
+          <article class="card">
+            <h3>16 extra capture points</h3>
+            <p>Expansion header allows additional probes beyond CPU pins so you can correlate events across the board.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="compatibility">
+        <h2>Compatibility</h2>
+        <div class="two-col">
+          <div class="card">
+            <h3>System fit</h3>
+            <p>Designed for Apple IIc and works in Apple IIe. Apple II / II+ operation is possible with additional spacers.</p>
+          </div>
+          <div class="card">
+            <h3>Analyzer requirement</h3>
+            <p>
+              This product does not include the analyzer boards. Two Dr Gusman LogicAnalyzer units are required.
+              You can source boards from
+              <a href="https://logicanalyzer.rf.gd" target="_blank" rel="noopener noreferrer">direct orders</a>
+              or the
+              <a href="https://www.pcbway.com/project/shareproject/LogicAnalyzer_V6_0_cc383781.html" target="_blank" rel="noopener noreferrer">PCBWay shared project</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="software">
+        <h2>Software and profiles</h2>
+        <p style="margin: 0 0 1rem; color: var(--muted); max-width: 58ch">
+          The adapter hardware project is hosted on
+          <a href="https://github.com/eositis/a2-6502-analyzer" target="_blank" rel="noopener noreferrer">its official Ositis repository</a>.
+          Capture software comes from Dr Gusman’s LogicAnalyzer project, and this adapter should be used with the 6.5 beta
+          line to import adapter profile/port assignments.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--ghost" href="https://github.com/gusmanb/logicanalyzer" target="_blank" rel="noopener noreferrer">Dr Gusman LogicAnalyzer</a>
+          <a class="btn btn--ghost" href="https://github.com/gusmanb/logicanalyzer/discussions/277" target="_blank" rel="noopener noreferrer">6.5 beta discussion</a>
+        </div>
+      </section>
+
+      <section class="section" id="install-notes">
+        <h2>Install notes</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>Before installation</h3>
+            <p>Power down and discharge the system. Confirm CPU orientation and ensure enough vertical clearance for wiring.</p>
+          </article>
+          <article class="card">
+            <h3>Board placement</h3>
+            <p>Seat the adapter into the CPU socket, then connect both LogicAnalyzer boards according to your signal map.</p>
+          </article>
+          <article class="card">
+            <h3>Additional probes</h3>
+            <p>Use the 16-signal expansion header with fly-wires to observe subsystem signals tied to the event under test.</p>
+          </article>
+          <article class="card">
+            <h3>Software setup</h3>
+            <p>Install Dr Gusman LogicAnalyzer 6.5 beta and import the adapter profile/port assignment for consistent channels.</p>
+          </article>
+          <article class="card">
+            <h3>Validation capture</h3>
+            <p>Start with a simple boot capture to verify channel polarity, clock stability, and trigger behavior.</p>
+          </article>
+          <article class="card">
+            <h3>Scope of product</h3>
+            <p>Adapter board only; analyzer hardware and optional fly-wire kits are separate purchase items.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <h2>FAQ</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>Is this a complete analyzer kit?</h3>
+            <p>No. You need two Dr Gusman LogicAnalyzer boards in addition to this adapter.</p>
+          </article>
+          <article class="card">
+            <h3>Which software version should I use?</h3>
+            <p>Use the 6.5 beta/release line for profile support with this adapter. See linked discussion and project updates.</p>
+          </article>
+          <article class="card">
+            <h3>Does it work on Apple IIe?</h3>
+            <p>Yes. It also works on Apple II/II+ with extra spacers; board geometry and slot clearance should be checked first.</p>
+          </article>
+          <article class="card">
+            <h3>Can I capture non-CPU signals?</h3>
+            <p>Yes, via the extra 16-signal expansion header and fly-wire probing.</p>
+          </article>
+          <article class="card">
+            <h3>Where do I buy the LogicAnalyzer boards?</h3>
+            <p>
+              You can source them from
+              <a href="https://logicanalyzer.rf.gd" target="_blank" rel="noopener noreferrer">logicanalyzer.rf.gd</a>
+              or via the
+              <a href="https://www.pcbway.com/project/shareproject/LogicAnalyzer_V6_0_cc383781.html" target="_blank" rel="noopener noreferrer">PCBWay shared project</a>.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Ositis Electronics</a>
+        · a2-6502 Logic Analyzer Adapter ·
+        <a href="https://github.com/eositis/a2-6502-analyzer" target="_blank" rel="noopener noreferrer">Official GitHub</a>
+        · <a href="a2-6502-support.html">Support</a>
+        · <a href="perf-tools.html">Perf tools</a>
+        · <a href="https://www.tindie.com/products/eositis/a2-6502-logicanalyzer-adapter/" target="_blank" rel="noopener noreferrer">Tindie</a>
+      </p>
+    </footer>
+    <script type="application/json" id="megaflash-gallery-manifest">
+{
+  "version": 1,
+  "items": [
+    {
+      "src": "https://raw.githubusercontent.com/eositis/a2-6502-analyzer/main/misc/a2-6502-3dview-v1_5.jpg",
+      "alt": "a2-6502 3D board view"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/eositis/a2-6502-analyzer/main/misc/a2-6502-J3header.jpg",
+      "alt": "a2-6502 J3 header detail"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/eositis/a2-6502-analyzer/main/misc/a2-6502-action-v1_4.jpg",
+      "alt": "a2-6502 adapter in use"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/eositis/a2-6502-analyzer/main/misc/a2-6502-assembled-v1_4.jpg",
+      "alt": "a2-6502 assembled board"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/eositis/a2-6502-analyzer/main/misc/a2-6502-signal-assignments.jpg",
+      "alt": "a2-6502 signal assignments diagram"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/eositis/a2-6502-analyzer/main/misc/a26502-boardview-1_5.jpg",
+      "alt": "a2-6502 board view"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/eositis/a2-6502-analyzer/main/misc/signal-assignments.jpg",
+      "alt": "signal assignments reference"
+    }
+  ]
+}
+    </script>
+    <script src="js/megaflash-hero-gallery.js" defer></script>
+    <script defer src="js/hit-tracker.js" data-endpoint="http://localhost:8787"></script>
+  </body>
+</html>
